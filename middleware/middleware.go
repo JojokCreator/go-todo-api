@@ -24,7 +24,7 @@ func init() {
 	createDBInstance()
 }
 
-func loadTheEnv() {
+// func loadTheEnv() {
 // 	err := godotenv.Load(".env")
 // 	if err != nil {
 // 		log.Fatal("Error loading the environment variables")
