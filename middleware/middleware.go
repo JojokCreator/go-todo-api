@@ -25,11 +25,11 @@ func init() {
 }
 
 func loadTheEnv() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal("Error loading the environment variables")
-	}
-}
+// 	err := godotenv.Load(".env")
+// 	if err != nil {
+// 		log.Fatal("Error loading the environment variables")
+// 	}
+// }
 
 func createDBInstance() {
 	connectionString := os.Getenv("DB_URI")
