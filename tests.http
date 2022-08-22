@@ -1,0 +1,28 @@
+GET http://localhost:9000/task HTTP/1.1
+
+###
+
+GET http://localhost:9000/task/ HTTP/1.1
+
+###
+
+POST http://localhost:9000/task HTTP/1.1
+content-type: application/json
+
+{
+    "task": "sample",
+    "status": true
+}
+
+###
+PUT http://localhost:9000/task/63025552cc0feee610a93656 HTTP/1.1
+content-type: application/x-www-form-urlencoded
+
+{
+    "task": "sample",
+    "status": "true"
+}
+
+
+###
+DELETE  http://localhost:9000/deleteAll/ HTTP/1.1
