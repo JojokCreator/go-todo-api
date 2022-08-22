@@ -5,11 +5,17 @@ import (
 	"go-todo/router"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
 	r := router.Router()
 	fmt.Println("starting the server on port 9000....")
+	port := os.Getenv("PORT")
 
-	log.Fatal(http.ListenAndServe(":9000", r))
+	if port == "" {
+		port = "9000"
+	}
+
+	log.Fatal(http.ListenAndServe(":"+port, r))
 }
