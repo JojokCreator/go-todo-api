@@ -10,6 +10,7 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 	// "github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -20,16 +21,16 @@ import (
 var collection *mongo.Collection
 
 func init() {
-	// loadTheEnv()
+	loadTheEnv()
 	createDBInstance()
 }
 
-// func loadTheEnv() {
-// 	err := godotenv.Load(".env")
-// 	if err != nil {
-// 		log.Fatal("Error loading the environment variables")
-// 	}
-// }
+func loadTheEnv() {
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal("Error loading the environment variables")
+	}
+}
 
 func createDBInstance() {
 	connectionString := os.Getenv("DB_URI")
